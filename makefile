@@ -38,6 +38,7 @@ PASS=$(shell echo $(DOCKER_PASSWORD))
 # angular
 NPM=npm
 NPM_INSTALL=$(NPM) install
+NPM_BUILD=$(NPM) build
 NG_BUILD=ng build --prod --aot --build-optimizer 
 NG1=analog
 
@@ -51,7 +52,7 @@ build-arm:
 
 build-web: $(NG1)
 	# ng1
-	cd $(NG1) && $(NPM_INSTALL) && $(NG_BUILD) --base-href="./$(NG1)/"
+	cd $(NG1) && $(NPM_INSTALL) && $(NPM_BUILD)
 	mv $(NG1)/dist $(NG1)-dist
 
 test: 
