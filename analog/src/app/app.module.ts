@@ -4,15 +4,21 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import {
   MatToolbarModule,
   MatButtonModule,
-  MatGridListModule
+  MatGridListModule,
+  MatFormFieldModule,
+  MatInputModule
 } from "@angular/material";
+import "hammerjs";
 
 import { AppRoutingModule } from "./app-routing.module";
+
+import { APIService } from "./services/api.service";
+
+import { ByuIDPipe } from "./pipes/byu-id.pipe";
 
 import { AppComponent } from "./components/app.component";
 import { LoginComponent } from "./components/login/login.component";
 import { JobsComponent } from "./components/jobs/jobs.component";
-import { ByuIDPipe } from "./pipes/byu-id.pipe";
 
 @NgModule({
   declarations: [AppComponent, LoginComponent, JobsComponent, ByuIDPipe],
@@ -22,9 +28,11 @@ import { ByuIDPipe } from "./pipes/byu-id.pipe";
     AppRoutingModule,
     MatToolbarModule,
     MatButtonModule,
-    MatGridListModule
+    MatGridListModule,
+    MatFormFieldModule,
+    MatInputModule
   ],
-  providers: [],
+  providers: [APIService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

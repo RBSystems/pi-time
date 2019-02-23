@@ -5,8 +5,6 @@ import { Pipe, PipeTransform } from "@angular/core";
 })
 export class ByuIDPipe implements PipeTransform {
   transform(val: string): string {
-    console.log("val", val);
-
     if (val.length >= 6) {
       return (
         val.slice(0, 2) + "-" + val.slice(2, 5) + "-" + val.slice(5, val.length)

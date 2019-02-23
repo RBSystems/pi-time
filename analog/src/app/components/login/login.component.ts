@@ -23,4 +23,6 @@ export class LoginComponent implements OnInit {
       this.id = this.id.slice(0, -1);
     }
   }
+
+  login() {}
 }

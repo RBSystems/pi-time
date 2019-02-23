@@ -3,6 +3,12 @@
     <span *ngIf="id?.length > 0" class="id">{{ id | byuID }}</span>
     <span *ngIf="id?.length == 0" class="id">Enter BYU ID</span>
 
+    <!-->
+    <mat-form-field>
+      <input matInput placeholder="BYU ID" [value]="id" />
+    </mat-form-field>
+      -->
+
     <!-- logo -->
     <object
       type="image/svg+xml"
